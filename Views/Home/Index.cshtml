@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Employee.Management.dotnet3.Models.Employee>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Employee List";
+}
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Department</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var emp in Model) {
+            <tr>
+                <td>
+                    @emp.Id
+                </td>
+                <td>
+                    @emp.Name
+                </td>
+                <td>
+                    @emp.Email
+                </td>
+                <td>
+                    @emp.Department
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>

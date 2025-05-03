@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
 
 namespace Employee.Management.dotnet3.Models {
@@ -12,6 +13,10 @@ namespace Employee.Management.dotnet3.Models {
         new Employee { Id = 2, Name = "Tilva", Department = "IT", Email = "Tilva@Eleven11.com" },
         new Employee { Id = 3, Name = "Lion", Department = "IT", Email = "Lion@Eleven11.com" },
       };
+    }
+
+    public IEnumerable<Employee> GetAll() {
+      return _employees;
     }
 
     public Employee GetEmployee(int id) {

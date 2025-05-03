@@ -10,8 +10,9 @@ namespace Employee.Management.dotnet3.Controllers {
       _employeeRepository = employeeRepository;
     }
 
-    public string Index() {
-      return _employeeRepository.GetEmployee(1).Name;
+    public ViewResult Index() {
+      var model =  _employeeRepository.GetAll();
+      return View(model);
     }
 
     public ViewResult Details(int id) {
