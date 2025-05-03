@@ -1,0 +1,17 @@
+﻿@model Employee.Management.dotnet3.ViewModels.HomeDetailsViewModel
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>
+        @Model.MyKeyTitle
+    </h1>
+    @{
+        var emp = @Model.employee;
+    }
+    <div>Name: @emp.Name</div>
+    <div>Email: @Model.employee.Email</div>
+    <div>Department: @emp.Department</div>
+</body>
+</html>
