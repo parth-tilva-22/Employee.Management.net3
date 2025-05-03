@@ -2,7 +2,7 @@
 
 namespace Employee.Management.dotnet3.Models {
   public interface IEmployeeRepository {
-    Employee GetEmployee(int id);
-    IEnumerable<Employee> GetAll();
+    EmployeeModel GetEmployee(int id);
+    IEnumerable<EmployeeModel> GetAll();
   }
 }
