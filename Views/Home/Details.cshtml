@@ -3,6 +3,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Employee Details";
 }
+@* <script src="~/js/customscript.js"></script> *@
 <h1>
     @Model.MyKeyTitle
 </h1>
@@ -12,4 +13,7 @@
 <div>Name: @emp.Name</div>
 <div>Email: @Model.employee.Email</div>
 <div>Department: @emp.Department</div>
-@* till part 26 viewmodel *@
+
+@section Scripts {
+    <script src="~/js/customscript.js"></script>
+}
