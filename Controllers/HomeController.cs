@@ -3,28 +3,24 @@ using Employee.Management.dotnet3.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Employee.Management.dotnet3.Controllers {
-  [Route("[controller]/[action]")]
-  public class WelcomeController : Controller {
-
+  public class HomeController : Controller {
     private readonly IEmployeeRepository _employeeRepository;
 
-    public WelcomeController(IEmployeeRepository employeeRepository) {
+    public HomeController(IEmployeeRepository employeeRepository) {
       _employeeRepository = employeeRepository;
     }
 
-    [Route("/")]
     public ViewResult Index() {
       var model =  _employeeRepository.GetAll();
-      return View("~/Views/Home/Index.cshtml",model);
+      return View(model);
     }
 
-    [Route("{id?}")]
-    public ViewResult Details(int? id) {
+    public ViewResult Details(int id) {
       var viewModel = new HomeDetailsViewModel {
-        employee = _employeeRepository.GetEmployee(id ?? 1),
+        employee = _employeeRepository.GetEmployee(id),
         MyKeyTitle = "Hello world from viewModel value"
       };
-      return View("~/Views/Home/details.cshtml",viewModel);
+      return View(viewModel);
     }
   }
 }
