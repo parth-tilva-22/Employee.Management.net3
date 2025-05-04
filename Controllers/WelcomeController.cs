@@ -3,7 +3,7 @@ using Employee.Management.dotnet3.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Employee.Management.dotnet3.Controllers {
-  [Route("[controller]")]
+  [Route("[controller]/[action]")]
   public class WelcomeController : Controller {
 
     private readonly IEmployeeRepository _employeeRepository;
@@ -12,14 +12,13 @@ namespace Employee.Management.dotnet3.Controllers {
       _employeeRepository = employeeRepository;
     }
 
-    [Route("")]
-    [Route("[action]")]
+    [Route("/")]
     public ViewResult Index() {
       var model =  _employeeRepository.GetAll();
       return View("~/Views/Home/Index.cshtml",model);
     }
 
-    [Route("/home/details/{id?}")]
+    [Route("{id?}")]
     public ViewResult Details(int? id) {
       var viewModel = new HomeDetailsViewModel {
         employee = _employeeRepository.GetEmployee(id ?? 1),
