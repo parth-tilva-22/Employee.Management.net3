@@ -17,7 +17,7 @@ namespace Employee.Management.dotnet3.Controllers {
 
     public ViewResult Details(int id) {
       var viewModel = new HomeDetailsViewModel {
-        employee = _employeeRepository.GetEmployee(id),
+        Employee = _employeeRepository.GetEmployee(id),
         MyKeyTitle = "Hello world from viewModel value"
       };
       return View(viewModel);

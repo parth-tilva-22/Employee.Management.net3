@@ -2,7 +2,7 @@
 
 namespace Employee.Management.dotnet3.ViewModels {
     public class HomeDetailsViewModel {
-        public EmployeeModel employee { get; set; }
+        public EmployeeModel Employee { get; set; }
         public string MyKeyTitle { get; set; }
     }
 }
